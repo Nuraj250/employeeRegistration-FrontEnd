@@ -1,0 +1,12 @@
+{
+  "saveSuccess": "Successfully saved!",
+  "saveFailed": "Save failed!",
+  "updateSuccess": "Successfully updated!",
+  "updateFailed": "Update failed!",
+  "removeSuccess": "Successfully removed!",
+  "removeFailed": "Remove failed!",
+  "formValidateError": "Please fill the required fields in the form!",
+  "backendError": "Something went wrong!",
+  "processFailed": "Process failed!",
+  "fileUploadFailed": "File Upload Failed!"
+}

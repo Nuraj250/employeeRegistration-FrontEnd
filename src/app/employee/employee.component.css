@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.row.content {
+    height: 1500px
+}
+
+.sidenav {
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: lighter;
+    font-family: sans-serif;
+    position: relative;
+    top: 12px;
+    left: 10px;
+}
+
+label {
+    font-size: 17px;
+}
+
+table.thead.tr.th {
+    border: 2px solid black;}
+
+header {
+    background-color: rgb(238, 229, 229);
+    color: white;
+    padding: 15px;
+    position: fixed;
+}
+
+.row.content {
+    height: auto;
+}
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 70px;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    background-color: #0f4841;
+}
+
+.sidenav a {
+    padding: 6px;
+    margin-left: -14px;
+    text-decoration: none;
+    font-size: 13px;
+    color: #ffffff;
+    display: block;
+
+}
+
+.locate {
+    background-color: #f1f1f1;
+    width: 100%;
+    height: 52px;
+    position: fixed;
+    left: 200px;
+    top: 70px;
+
+}
+
+.info.input {
+    width: 169px;
+}
