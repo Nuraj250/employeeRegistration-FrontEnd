@@ -4,9 +4,11 @@ import alertJson from 'src/assets/alert.json';
 import { AlertService } from 'ngx-alerts';
 import { Alert } from 'src/assets/alert';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { EmployeeService } from './Employee.service';
-import { Employee } from './Employee';
+import { EmployeeService } from './employee.service';
+import { Employee } from './employee';
+
 @Component({
+
   selector: 'app-employee',
   templateUrl: './employee.component.html',
   styleUrls: ['./employee.component.css']
@@ -21,11 +23,10 @@ export class EmployeeComponent implements OnInit {
   });
   employeeDetails: any;
   allEmployee: any;
-  constructor(private spinner: NgxSpinnerService, private employeeService: EmployeeService, private alertService: AlertService) { }
+  constructor(private spinner: NgxSpinnerService,private employeeService: EmployeeService,private alertService: AlertService) { }
   get sname(): any {
     return this.employeeForm.get('sname');
-  }
-  get fname(): any {
+  } get fname(): any {
     return this.employeeForm.get('fname');
   } get mname(): any {
     return this.employeeForm.get('mname');
@@ -39,14 +40,11 @@ export class EmployeeComponent implements OnInit {
     return this.employeeForm.get('designation');
   } get reportingManager(): any {
     return this.employeeForm.get('reportingManager');
-  }
-  get companyEmail(): any {
+  } get companyEmail(): any {
     return this.employeeForm.get('companyEmail');
-  }
-  get id(): any {
+  } get id(): any {
     return this.employeeForm.get('id');
-  }
-  get DOA(): any {
+  } get DOA(): any {
     return this.employeeForm.get('DOA');
   } get accnum(): any {
     return this.employeeForm.get('accnum');
@@ -168,7 +166,7 @@ export class EmployeeComponent implements OnInit {
     return new Promise(async resolve => {
       savebtn.innerText = 'Update';
 
-      this.employeeDetails = {obj: data, index: i};
+      this.employeeDetails = { obj: data, index: i };
 
       this.sname.setValue(data.sName);
       this.fname.setValue(data.fName);
@@ -187,7 +185,7 @@ export class EmployeeComponent implements OnInit {
       this.password.setValue(data.password);
       this.note.setValue(data.note);
       this.id.setValue(data.id);
-      element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+      element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
       await this.spinner.hide();
     });
   }
