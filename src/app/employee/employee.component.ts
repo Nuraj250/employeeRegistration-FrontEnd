@@ -20,10 +20,27 @@ export class EmployeeComponent implements OnInit {
     fname: new FormControl('', [Validators.required]),
     mname: new FormControl('', [Validators.required]),
     lname: new FormControl('', [Validators.required]),
+    mobile: new FormControl(''),
+    address: new FormControl(''),
+    designation: new FormControl(''),
+    reportingManager: new FormControl(''),
+    companyEmail: new FormControl(''),
+    id: new FormControl(''),
+    DOA: new FormControl(''),
+    accnum: new FormControl(''),
+    bank: new FormControl(''),
+    branch: new FormControl(''),
+    BOD: new FormControl(''),
+    gender: new FormControl(''),
+    age: new FormControl(''),
+    password: new FormControl(''),
+    note: new FormControl('')
+
+
   });
   employeeDetails: any;
   allEmployee: any;
-  constructor(private spinner: NgxSpinnerService,private employeeService: EmployeeService,private alertService: AlertService) { }
+  constructor(private spinner: NgxSpinnerService, private employeeService: EmployeeService, private alertService: AlertService) { }
   get sname(): any {
     return this.employeeForm.get('sname');
   } get fname(): any {
