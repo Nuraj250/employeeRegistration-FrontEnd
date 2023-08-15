@@ -28,48 +28,57 @@
             </div><br>
             <div class="container" style="background-color:white ;padding: 30px;border-radius: 7px ;">
                 <form [formGroup]="employeeForm">
-                    <span style="font-size: 30px;margin-left: -12px;font-weight: bold;">Employee Registration</span>
-
+                    <h4 class="p-o m-0 my-2 ">{{this.employeeForm.value.id ? 'Update' : 'Create'}} Employee
+                        {{this.employeeForm.value.id?.id ? '(' + this.employeeForm.value.fname + ')' : ''}}
+                    </h4>
                     <div class="container"
                         style="background-color:#f3f3f3;margin-top: 30px;border-radius: 7px ;padding: 20px;">
                         <h1>Employee Name</h1>
                         <div class="row">
                             <div class="col ">
                                 <label for="sname">Surname<span class="required"></span>
-                                    <input [formControl]="sname" type="text" name="text" style="width: 34vw;"
+                                    <input Name="sname" type="text" name="text" style="width: 34vw;"
                                         placeholder="Your Surname..">
                                 </label>
-                                <div *ngIf="sname.touched && sname.invalid" class="error-message">
-                                    <div *ngIf="sname.errors.required">Surname is required!</div>
+                                <div *ngIf="this.employeeForm?.value.sname?.touched && this.employeeForm?.value.sname.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.sname.errors.required">Surname is required!
+                                    </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <label for="fname">First Name<span class="required"></span>
-                                    <input [formControl]="fname" type="text" name="text" style="width: 34vw;"
+                                    <input Name="fname" type="text" name="text" style="width: 34vw;"
                                         placeholder="Your First-name..">
                                 </label>
-                                <div *ngIf="fname.touched && fname.invalid" class="error-message">
-                                    <div *ngIf="fname.errors.required">First Name is required!</div>
+                                <div *ngIf="this.employeeForm?.value.fname.touched && this.employeeForm?.value.fname.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.fname.errors.required">First Name is required!
+                                    </div>
                                 </div>
                             </div>
                         </div><br>
                         <div class="row ">
                             <div class="col">
                                 <label for="mname">Middle Name<span class="required"></span>
-                                    <input [formControl]="mname" type="text" name="text" style="width: 34vw;"
+                                    <input Name="mname" type="text" name="text" style="width: 34vw;"
                                         placeholder="Your Middle-name..">
                                 </label>
-                                <div *ngIf="mname.touched && mname.invalid" class="error-message">
-                                    <div *ngIf="mname.errors.required">Middle Name is required!</div>
+                                <div *ngIf="this.employeeForm?.value.mname.touched && this.employeeForm?.value.mname.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.mname.errors.required">Middle Name is required!
+                                    </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <label for="lname">Last Name<span class="required"></span>
-                                    <input [formControl]="lname" type="email" name="email" style="width: 34vw;"
+                                    <input FormControllName="lname" type="email" name="email" style="width: 34vw;"
                                         placeholder="Your Last name..">
                                 </label>
-                                <div *ngIf="lname.touched && lname.invalid" class="error-message">
-                                    <div *ngIf="lname.errors.required">Last Name is required!</div>
+                                <div *ngIf="this.employeeForm?.value.lname.touched && this.employeeForm?.value.lname.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.lname.errors.required">Last Name is required!
+                                    </div>
                                 </div>
                             </div>
                         </div><br>
@@ -77,51 +86,60 @@
                         <div class="row">
                             <div class="col">
                                 <label for="id">Employee ID
-                                    <input [formControl]="id" type="text" name="text" style="width: 34vw;"
+                                    <input FormControllName="idNumber" type="text" name="text" style="width: 34vw;"
                                         placeholder="Your ID..">
                                 </label>
-                                <div *ngIf="id.touched && id.invalid" class="error-message">
-                                    <div *ngIf="id.errors.required">Id is required!</div>
+                                <div *ngIf="this.employeeForm?.value.idNumber.touched && this.employeeForm?.value.idNumber.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.idNumber.errors.required">Id is required!</div>
                                 </div>
                             </div>
                             <div class="col">
                                 <label for="designation">Designation
-                                    <input [formControl]=" designation" type="text" name="text" style="width: 34vw;"
+                                    <input FormControllName=" designation" type="text" name="text" style="width: 34vw;"
                                         placeholder="Your Designation..">
                                 </label>
-                                <div *ngIf="designation.touched && designation.invalid" class="error-message">
-                                    <div *ngIf="designation.errors.required">Designation is required!</div>
+                                <div *ngIf="this.employeeForm?.value.this.employeeForm?.value.designation.touched && this.employeeForm?.value.designation.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.designation.errors.required">Designation is
+                                        required!</div>
                                 </div>
                             </div>
                         </div><br>
                         <div class="row">
                             <div class="col">
                                 <label for="reportingManager">Reporting Manager
-                                    <input [formControl]=" reportingManager" type="text" name="text"
+                                    <input FormControllName=" reportingManager" type="text" name="text"
                                         style="width: 34vw;" placeholder="Your Reporting Manager..">
                                 </label>
-                                <div *ngIf="reportingManager.touched && reportingManager.invalid" class="error-message">
-                                    <div *ngIf="reportingManager.errors.required">Reporting Manager is required!</div>
+                                <div *ngIf="this.employeeForm?.value.reportingManager.touched && this.employeeForm?.value.reportingManager.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.reportingManager.errors.required">Reporting
+                                        Manager is required!</div>
                                 </div>
                             </div>
                             <div class="col">
                                 <label for="companyEmail">Company E-mail
-                                    <input [formControl]=" companyEmail" type="email" name="email" style="width: 34vw;"
-                                        placeholder="Your Company E-mail..">
+                                    <input FormControllName=" companyEmail" type="email" name="email"
+                                        style="width: 34vw;" placeholder="Your Company E-mail..">
                                 </label>
-                                <div *ngIf="companyEmail.touched && companyEmail.invalid" class="error-message">
-                                    <div *ngIf="companyEmail.errors.required">Company E-mail is required!</div>
+                                <div *ngIf="this.employeeForm?.value.companyEmail.touched && this.employeeForm?.value.companyEmail.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.companyEmail.errors.required">Company E-mail is
+                                        required!</div>
                                 </div>
                             </div>
                         </div><br>
                         <div class="row">
                             <div class="col">
                                 <label for="DOA">Date of Appointment<br>
-                                    <input [formControl]=" DOA" type="date" name="Date" style="width: 34vw;"
+                                    <input FormControllName=" DOA" type="date" name="Date" style="width: 34vw;"
                                         placeholder="Your Date of Appointment..">
                                 </label>
-                                <div *ngIf="DOA.touched && DOA.invalid" class="error-message">
-                                    <div *ngIf="DOA.errors.required">Date of Appointmen is required!</div>
+                                <div *ngIf="this.employeeForm?.value.DOA.touched && this.employeeForm?.value.DOA.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.DOA.errors.required">Date of Appointmen is
+                                        required!</div>
                                 </div>
                             </div>
                         </div><br>
@@ -129,20 +147,24 @@
                         <div class="row">
                             <div class="col">
                                 <label for="mobile">Phone Number
-                                    <input [formControl]=" mobile" type="text" name="text " style="width:34vw ;"
+                                    <input FormControllName=" mobile" type="text" name="text " style="width:34vw ;"
                                         placeholder="Your Phone Number..">
                                 </label>
-                                <div *ngIf="mobile.touched && mobile.invalid" class="error-message">
-                                    <div *ngIf="mobile.errors.required">Phone Number is required!</div>
+                                <div *ngIf="this.employeeForm?.value.mobile.touched && this.employeeForm?.value.mobile.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.mobile.errors.required">Phone Number is
+                                        required!</div>
                                 </div>
                             </div>
                             <div class="col">
                                 <label for="address">Address
-                                    <input [formControl]="address" type="text" name="text " style="width:34vw ;"
+                                    <input FormControllName="address" type="text" name="text " style="width:34vw ;"
                                         placeholder="Your Address..">
                                 </label>
-                                <div *ngIf="address.touched && address.invalid" class="error-message">
-                                    <div *ngIf="address.errors.required">Address is required!</div>
+                                <div *ngIf="this.employeeForm?.value.address.touched && this.employeeForm?.value.address.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.address.errors.required">Address is required!
+                                    </div>
                                 </div>
                             </div>
                         </div><br>
@@ -150,31 +172,36 @@
                         <div class="row">
                             <div class="col">
                                 <label for="accnum">Account Number
-                                    <input [formControl]="accnum" type="text" name="text " style="width:34vw ;"
+                                    <input FormControllName="accnum" type="text" name="text " style="width:34vw ;"
                                         placeholder="Your Account Number.">
                                 </label>
-                                <div *ngIf="accnum.touched && accnum.invalid" class="error-message">
-                                    <div *ngIf="accnum.errors.required">Account Number is required!</div>
+                                <div *ngIf="this.employeeForm?.value.accnum.touched && this.employeeForm?.value.accnum.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.accnum.errors.required">Account Number is
+                                        required!</div>
                                 </div>
                             </div>
                             <div class="col">
                                 <label for="bank">Bank<br>
-                                    <input [formControl]="bank" type="text" name="text " style="width:34vw ;"
+                                    <input FormControllName="bank" type="text" name="text " style="width:34vw ;"
                                         placeholder="Your Bank..">
                                 </label>
-                                <div *ngIf="bank.touched && bank.invalid" class="error-message">
-                                    <div *ngIf="bank.errors.required">Bank is required!</div>
+                                <div *ngIf="this.employeeForm?.value.bank.touched && this.employeeForm?.value.bank.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.bank.errors.required">Bank is required!</div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <label for="branch">Branch<br>
-                                    <input [formControl]="branch" type="text" name="text " style="width:34vw ;"
+                                    <input FormControllName="branch" type="text" name="text " style="width:34vw ;"
                                         placeholder="Your Bank-branch..">
                                 </label>
-                                <div *ngIf="branch.touched && branch.invalid" class="error-message">
-                                    <div *ngIf="branch.errors.required">Branch is required!</div>
+                                <div *ngIf="this.employeeForm?.value.branch.touched && this.employeeForm?.value.branch.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.branch.errors.required">Branch is required!
+                                    </div>
                                 </div>
                             </div>
                             <div class="col">
@@ -184,31 +211,36 @@
                         <div class="row">
                             <div class="col">
                                 <label for="BOD">Birthday
-                                    <input [formControl]="BOD" type="text" name="text " style="width:34vw ;"
+                                    <input FormControllName="BOD" type="text" name="text " style="width:34vw ;"
                                         placeholder="Your Birthday..">
                                 </label>
-                                <div *ngIf="BOD.touched && BOD.invalid" class="error-message">
-                                    <div *ngIf="BOD.errors.required">Birthday is required!</div>
+                                <div *ngIf="this.employeeForm?.value.BOD.touched && this.employeeForm?.value.BOD.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.BOD.errors.required">Birthday is required!
+                                    </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <label for="gender">Gender
-                                    <input [formControl]="gender" type="text" name="text " style="width:34vw ;"
+                                    <input FormControllName="gender" type="text" name="text " style="width:34vw ;"
                                         placeholder="Your Gender..">
                                 </label>
-                                <div *ngIf="gender.touched && sname.invalid" class="error-message">
-                                    <div *ngIf="gender.errors.required">Gender is required!</div>
+                                <div *ngIf="this.employeeForm?.value.gender.touched && this.employeeForm?.value.gender.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.gender.errors.required">Gender is required!
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <label for="age">Age<br>
-                                    <input [formControl]="gender" type="text" name="text " style="width:34vw ;"
+                                    <input FormControllName="gender" type="text" name="text " style="width:34vw ;"
                                         placeholder="Your Age..">
                                 </label>
-                                <div *ngIf="age.touched && age.invalid" class="error-message">
-                                    <div *ngIf="age.errors.required">Age is required!</div>
+                                <div *ngIf="this.employeeForm?.value.age.touched && this.employeeForm?.value.age.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.age.errors.required">Age is required!</div>
                                 </div>
                             </div>
                             <div class="col">
@@ -221,18 +253,23 @@
                                     <input type="password" name="text " style="width:34vw ;"
                                         placeholder="Your Password..">
                                 </label>
-                                <div *ngIf="password.touched && password.invalid" class="error-message">
-                                    <div *ngIf="password.errors.required">Password is required!</div>
+                                <div *ngIf="this.employeeForm?.value.password.touched && this.employeeForm?.value.password.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.password.errors.required">Password is required!
+                                    </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <label for="password">Confirm Password
-                                    <input [formControl]="password" type="password" name="text " style="width:34vw ;"
-                                        placeholder="Re-enter Your Password..">>
+                                    <input FormControllName="password" type="password" name="text " style="width:34vw ;"
+                                        placeholder="Re-enter Your Password..">
                                 </label>
-                                <div *ngIf="password.touched && password.invalid" class="error-message">
-                                    <div *ngIf="password.errors.required">Password is required!</div>
-                                    <div *ngIf="password.errors.confirmedValidator">Password does not match</div>
+                                <div *ngIf="this.employeeForm?.value.password.touched && this.employeeForm?.value.password.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.password.errors.required">Password is required!
+                                    </div>
+                                    <div *ngIf="this.employeeForm?.value.password.errors.confirmedValidator">Password
+                                        does not match</div>
                                 </div>
                             </div>
                         </div><br>
@@ -240,27 +277,43 @@
                         <div class="row">
                             <div class="col">
                                 <label for="note">Note<br>
-                                    <textarea [formControl]="note" rows="5" cols="100"
+                                    <textarea FormControllName="note" rows="5" cols="100"
                                         placeholder="Your Note.."></textarea>
                                 </label>
-                                <div *ngIf="note.touched && note.invalid" class="error-message">
-                                    <div *ngIf="note.errors.required">Surname is required!</div>
-                                    <div *ngIf="note.errors.pattern">Invalid Surname!</div>
+                                <div *ngIf="this.employeeForm?.value.note.touched && this.employeeForm?.value.note.invalid"
+                                    class="error-message">
+                                    <div *ngIf="this.employeeForm?.value.note.errors.required">Surname is required!
+                                    </div>
+                                    <div *ngIf="this.employeeForm?.value.note.errors.pattern">Invalid Surname!</div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col" style="padding: 20px;">
-                                <button #savebtn type="button" class="btn btn-primary" style="width: 34vw;"
-                                    (cancel)="''" (confirm)="save(savebtn)" [disabled]="employeeForm.disabled"
-                                    class="btn save-btn-style btn-primary" mwlConfirmationPopover
-                                    placement="top">Register</button>
-                            </div>
-                            <div class="col" style="padding: 20px;">
-                                <button type="button" class="btn btn-danger" style="width: 35vw;" (cancel)="''"
-                                    (confirm)="cancel(savebtn)" [disabled]="employeeForm.disabled"
-                                    class="btn close-btn-style btn-danger" mwlConfirmationPopover placement="top">
-                                    Cancel</button>
+                            <div class="row text-center py-2">
+                                <div class="col-6">
+                                    <button (click)="cancel()" class="btn btn-danger text-white col-12">Cancel
+                                    </button>
+                                </div>
+
+                                <!-- Save buttons -->
+                                <div class="col-6" *ngIf="!this.employeeForm?.value?.sname; else elseBlock">
+                                    <button [disabled]="!employeeForm.valid" (click)="saveEmployee()"
+                                        class="btn btn-success text-white col-12">
+                                        Save
+                                    </button>
+                                </div>
+
+                                <!-- Update Button -->
+                                <ng-template #elseBlock>
+                                    <div class="col-6">
+                                        <button [disabled]="!employeeForm.valid" (click)="updateEmployee()"
+                                            class="btn btn-warning text-white col-12">
+                                            Update
+                                        </button>
+
+                                    </div>
+                                </ng-template>
+
                             </div>
                         </div>
                         <br><br>
